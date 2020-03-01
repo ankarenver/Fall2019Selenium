@@ -31,7 +31,9 @@ public class BasicNavigation1 {
         }
 
         driver.navigate().to("http://amazon.com");
+        System.out.println(driver.getCurrentUrl());
         driver.navigate().back();
+        System.out.println(driver.getCurrentUrl());
         verifyEquals(driver.getTitle(),"google");
 
 
