@@ -7,7 +7,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class BasicNavigation {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
 
         // to stat selenium script we need:
@@ -16,11 +16,11 @@ public class BasicNavigation {
         ChromeDriver driver00 = new ChromeDriver();
         WebDriver driver01 = new SafariDriver();
         // in selenium everything starts from WebDriver interface
-        driver00.get("http://google.com");  // to open a website
+        driver00.get("http://facebook.com");  // to open a website
 
-        Thread.sleep(5000);  // for demo , wait 5 seconds
-
-        driver00.close();  // to close browser
+//        Thread.sleep(5000);  // for demo , wait 5 seconds
+//
+//        driver00.close();  // to close browser
 
 
 
