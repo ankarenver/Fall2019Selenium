@@ -34,6 +34,16 @@ public class FindElementById {
 
         System.out.println(href);
         System.out.println(Class);
+
+        // Enter invalid credentials
+        driver.findElement(By.name("username")).sendKeys("ankar");
+        Thread.sleep(2000);
+        driver.findElement(By.name("password")).sendKeys("sdasdafsa");
+        Thread.sleep(2000);
+        driver.findElement(By.id("wooden_spoon")).click();
+
+        System.out.println(driver.findElement(By.id("flash-messages")).getText());
+        Thread.sleep(4000);
         driver.quit();
     }
 }
