@@ -15,6 +15,25 @@ public class FindElementById {
         Thread.sleep(2000);
         driver.findElement(By.id("wooden_spoon")).click();
         Thread.sleep(2000);
+
+        String expected = "Welcome to the Secure Area. When you are done click logout below.";
+        String actual = driver.findElement(By.tagName("h4")).getText();
+
+        if (expected.equals(actual)){
+            System.out.println("Test Passed");
+        }else {
+            System.out.println("Test Failed");
+        }
+
+        String href = driver.findElement(By.partialLinkText("Logout")).getAttribute("href");
+        String Class = driver.findElement(By.partialLinkText("Logout")).getAttribute("class");
+        // let's click on Logout button. it looks like a button, but it's actually a link
+        // every element with <a> tag is a link
+        // if you have some space and you are not sure to include it you can use partialLinkText instead of linkText
+        driver.findElement(By.partialLinkText("Logout")).click();
+
+        System.out.println(href);
+        System.out.println(Class);
         driver.quit();
     }
 }
