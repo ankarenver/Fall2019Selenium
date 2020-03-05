@@ -21,9 +21,12 @@ public class F_driver {
         }else if(browserName.equalsIgnoreCase("firefox")){
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
-        }else {
+        }else if(browserName.equalsIgnoreCase("iE")) {
             WebDriverManager.iedriver().setup();
             return new InternetExplorerDriver();
+        }else {
+            WebDriverManager.chromedriver().setup();
+            return new ChromeDriver();
         }
 
     }
