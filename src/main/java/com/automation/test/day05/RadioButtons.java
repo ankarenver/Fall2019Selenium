@@ -17,6 +17,10 @@ public class RadioButtons {
         BrowserUtils.wait(2);
         List<WebElement> radioButtons = driver.findElements(By.tagName("input"));
         for (WebElement each : radioButtons){
+            // to check if the button is selected you can use isSelected() method returns boolean
+            boolean isChoosen = each.isSelected();
+            System.out.println(isChoosen);    // returns false now cause be click on it in later in if statement
+
             if (each.isEnabled()){
                 each.click();
                 BrowserUtils.wait(2);
