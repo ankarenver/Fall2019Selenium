@@ -22,12 +22,15 @@ public class Alerts {
         BrowserUtils.wait(2);
         // to get the text from popup message
         String popupText = driver.switchTo().alert().getText();
+        System.out.println("here is task 1 : ");
         System.out.println(popupText);
 
         driver.switchTo().alert().accept();   // to click OK
         String expected = "You successfully clicked an alert";
         String actual = driver.findElement(By.id("result")).getText();
-        System.out.println((expected.equals(actual)? "PASS" : "FAILED"));
+        System.out.println((expected.equals(actual)? " TEST PASS" : "TEST FAILED"));
+
+        System.out.println("here is task 2 : ");
         BrowserUtils.wait(5);
         buttons.get(1).click(); // to click on the 2nd button
         // to click cancel
@@ -36,9 +39,9 @@ public class Alerts {
         String expected2 = "You clicked: Cancel";
         String actual2 = driver.findElement(By.id("result")).getText();
         if(expected2.equals(actual2)){
-            System.out.println("PASS");
+            System.out.println("TEST PASS");
         }else {
-            System.out.println("FAILED");
+            System.out.println("TEST FAILED");
 
         }
 
