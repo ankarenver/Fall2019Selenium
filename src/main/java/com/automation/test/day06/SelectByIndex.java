@@ -16,6 +16,7 @@ public class SelectByIndex {
         BrowserUtils.wait(1);
 
         Select stateSelect = new Select(driver.findElement(By.id("state")));
+        stateSelect.getOptions().get(15).click();
 
         System.out.println(stateSelect.getOptions().get(15).getText());
 

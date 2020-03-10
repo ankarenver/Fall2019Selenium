@@ -40,7 +40,7 @@ public class SelectByText {
         }
 
 
-        //
+        // select all days one by one
         List<WebElement> days = selectDay.getOptions();
         for (WebElement each : days){
             // get the month name and select based on that
