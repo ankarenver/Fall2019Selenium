@@ -19,12 +19,16 @@ public class TestForiFrame {
         System.out.println(driver.findElement(By.id("tinymce")).getText());
 
         driver.findElement(By.id("tinymce")).clear();
-        driver.findElement(By.id("tinymce")).sendKeys("hello sadads");
+        driver.findElement(By.id("tinymce")).sendKeys("hello arkadaslar");
         BrowserUtils.wait(4);
 
 
         // Exit from the frame
-        driver.switchTo().defaultContent();
+//        driver.switchTo().defaultContent();
+
+
+        // did not work because of we did not get out of iFrame
+        System.out.println(driver.findElement(By.xpath("//h3")).getText());
         driver.close();
 
     }
