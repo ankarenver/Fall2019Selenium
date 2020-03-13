@@ -1,0 +1,127 @@
+we learn how to use git and github
+
+** first time create a project and commit and push**
+git init
+git add .
+git commit -m "massage"
+if it is the first time go to github create new repository and copy paste two link one by one
+git push
+
+** once new repository created do only follows **
+git add .
+git commit -m "massage"
+git push
+
+
+cd + directory name goes that directory
+cd .. go back
+pwd gives you your current directory
+
+
+
+***************  Class Note *******************************
+
+
+
+ -Today is March 11, 2020
+
+	Agenda: Git
+
+		git pull, fetch, merge, clone
+
+Windows, use git bash or powershell, not a CMD/
+
+
+Terminal commands:
+
+ls - to list directory
+
+ls -a / ls -l  to see all files, even hidden
+
+pwd - print work directory
+
+cd folderName - switch to another folder
+
+mkdir foldername - make directory
+
+mkdir git - you will create a git folder
+
+cd .. - go back
+
+######### git commands are the same for everyone
+
+To get a copy of the project, use git clone URL
+
+For example:
+
+git clone https://github.com/CybertekSchool/GitPracticeFall2019.git
+
+For windows: run git bash as administrator
+
+right click on the program --> run as administrator
+
+
+for mac: run command with sudo
+
+Instead of:
+
+git clone https://github.com/CybertekSchool/GitPracticeFall2019.git
+
+USe sudo:
+
+sudo git clone https://github.com/CybertekSchool/GitPracticeFall2019.git
+
+
+IF you want to delete some file through the terminal?
+
+rm name of the file/folder
+
+rm GitPracticeFall2019 - to delete project that I've just cloned
+
+WARNING!
+
+rm -f file - force removal, don't use it if you are not sure!
+
+rmdir - remove folder
+
+rm -rf folder/filename - remove forcefully
+
+clear - to clean the terminal
+
+pwd
+
+/Users/studio2/git
+
+If you connected to CybertekSchool repository, and you want to connect to yours, use this command to connect to your own github repository.
+
+To change remote git URL: git remote set-url origin URL
+
+git remote -v  | to see remote repository URL
+
+To connect: Go to the github, create a new repository and then follow commands for the existing project.
+
+To change remote git URL/ or to connect to another github repository: git remote set-url origin https://github.com/yourusername/projectname.git
+
+
+git init						| only once per project
+git add .
+git commit -m "first commit"
+
+Windows warning, don't worry....
+
+warning: LF will be replaced by CRLF in pom.xml.
+
+
+git pull - to get updates from github
+
+A comma-separated values (CSV) file is a delimited text file that uses a comma to separate values.
+
+git pull - (fetch + merge)
+
+git fetch - get updates from the remote repository, without merging them with your code.
+git merge - merge changes
+
+
+
+
+
