@@ -58,4 +58,45 @@ public class PracticeTest {
 
 
     }
+
+    @Test
+    public void forgetPassword(){
+        driver.findElement(By.linkText("Forgot Password")).click();
+        driver.findElement(By.xpath("//input[@name = 'email']")).sendKeys("asada@gmail.com");
+        driver.findElement(By.cssSelector("#form_submit")).click();
+
+        String expected = driver.findElement(By.tagName("h4")).getText();
+        String actual = "Your e-mail's been sent!";
+
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    /**
+     * /**
+     *  * TASK for 5 minutes
+     *  * Given user is on the practice landing page
+     *  * When user navigates to "Checkboxes" page
+     *  * And clicks on checkbox #1
+     *  * Then user verifies that checkbox #1 is selected
+     *  */
+
+
+    @Test
+    public void checkBoxTest1(){
+        driver.navigate().to("http://practice.cybertekschool.com/checkboxes");
+        BrowserUtils.wait(5);
+        driver.findElement(By.xpath("//input[@type='checkbox'][1]")).click();
+        BrowserUtils.wait(5);
+        Assert.assertTrue(driver.findElement(By.xpath("//input[@type='checkbox'][1]")).isSelected());
+
+    }
+
+
+
+
+
+
+
+
 }
