@@ -16,9 +16,7 @@ public class BrowserUtils {
 
     public static List<String> getTextFromWebElement(List<WebElement> data){
         List<String> result = new ArrayList<>();
-        for (WebElement each : data) {
-            result.add(each.getText());
-        }
+        data.forEach(each -> result.add(each.getText()));
         return result;
     }
 }
