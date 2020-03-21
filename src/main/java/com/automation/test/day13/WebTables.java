@@ -63,9 +63,35 @@ public class WebTables {
         WebElement delete = driver.findElement(By.xpath("//table[1]//td[text()='jsmith@gmail.com']//following-sibling::td/a[text()='delete']"));
         delete.click();
         List<WebElement> links = driver.findElements(By.xpath("//table[1]//tbody//tr//td[5]"));
-        Assert.assertEquals(links.size(), 3);
+        Assert.assertFalse(links.contains("jsmith@gmail.com"));
     }
 
+    @Test
+    public void getColumnIndexByName(){
+        String columnName = "Email";
+        List<WebElement> columnNames = driver.findElements(By.xpath("//table[2]//th"));
+
+        int index = 0;
+        for (int i = 0; i <columnNames.size() ; i++) {
+            String actualColumnName = columnNames.get(i).getText();
+            System.out.println(String.format("Column name: %s, position %s", actualColumnName, i));
+         if(columnNames.get(i).getText().equals(columnName)){
+             index = i+1;
+             break;
+         }
+        }
+        Assert.assertEquals(index,3);
+    }
+
+    @Test
+    public void getSpecificCell(){
+        String expected = "http://www.jdoe.com" ;
+        int row = 3;
+        int column =5;
+        String xpath = "//table[1]//tbody//tr["+row+"]//td["+column+"]";
+        WebElement cell = driver.findElement(By.xpath(xpath));
+        Assert.assertEquals(cell.getText(),expected);
+    }
 
     @AfterMethod
     public void teardown(){
