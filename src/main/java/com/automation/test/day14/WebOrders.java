@@ -59,6 +59,7 @@ public class WebOrders {
         driver.findElement(By.id("ctl00_MainContent_fmwOrder_UpdateButton")).click();
         String  newZipCode = driver.findElement(By.xpath("//table//tr[4]//td[9]")).getText();
         Assert.assertEquals(newZipCode,"20002");
+
     }
 
 
