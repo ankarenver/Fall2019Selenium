@@ -1,10 +1,7 @@
 package com.automation.test.day14;
 
 import com.automation.utilities.F_driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.AfterMethod;
@@ -20,7 +17,6 @@ public class FluentWaitTest {
 
     @BeforeMethod
     public void setup(){
-
         driver = F_driver.getNewDriver("chrome");
     }
 
@@ -36,7 +32,8 @@ public class FluentWaitTest {
         Wait<WebDriver> wait = new FluentWait<>(driver).
                 withTimeout(Duration.ofSeconds(10)).
                 pollingEvery(Duration.ofSeconds(3)).
-                ignoring(NoSuchElementException.class);
+                ignoring(NoSuchElementException.class).
+                ignoring(ElementClickInterceptedException.class);
 
         WebElement submitBtn = wait.until(driver -> driver.findElement(By.xpath("//button[@type='submit']")));
 
